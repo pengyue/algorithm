@@ -14,7 +14,7 @@ def find_max_block(A, r, c, L, H, size):
     cntArr[r][c] = 1
     size += 1
 
-    if (size > maxSize):
+    if size > maxSize:
         maxSize = size
 
     direction = [
