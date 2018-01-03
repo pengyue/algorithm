@@ -7,7 +7,7 @@ public class SingleLinkedList<T> {
 
     public void add(T element)
     {
-        Node<T> node = new Node<T>();
+        Node<T> node = new Node<>();
         node.setData(element);
 
         System.out.println("Adding: " + element);
@@ -99,6 +99,20 @@ public class SingleLinkedList<T> {
                 System.out.println("Unable to find the given element...");
             }
         }
+    }
+
+    public void deleteNode(T node)
+    {
+        Node<T> current = this.start;
+        Node<T> previous = current;
+
+        while (current.compareTo(node) == 1) {
+            previous = current;
+            current = current.getNext();
+        }
+
+        previous.setNext(current);
+
     }
 
     public void traverse()
